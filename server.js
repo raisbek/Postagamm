@@ -17,5 +17,5 @@ app.use(authRoutes)
 
 
 app.listen(process.env.PORT || 8080, () => {
-    console.log("Good");
+    console.log(`http://localhost:${process.env.PORT}`);
 })

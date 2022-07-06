@@ -2,6 +2,8 @@ import express from "express";
 import cors from "cors"
 import dotenv from  "dotenv"
 import authRoutes from "./routes/auth.routes.js"
+import verificationRoutes from './verifacation.routes.js'
+
 
 dotenv.config()
 
@@ -13,6 +15,7 @@ app.use(express.urlencoded({extended: true}))
 
 
 app.use(authRoutes)
+app.use(verificationRoutes)
 
 
 

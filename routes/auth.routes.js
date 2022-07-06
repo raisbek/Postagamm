@@ -1,7 +1,6 @@
 import { Router } from "express";
 import { createUser, findUser } from "../service/user.service.js";
 import md5 from "md5";
-
 const router = Router()
 
 

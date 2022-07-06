@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors"
 import dotenv from  "dotenv"
 import authRoutes from "./routes/auth.routes.js"
-import verificationRoutes from './verifacation.routes.js'
+import verificationRoutes from './routes/verifacation.routes.js'
 
 
 dotenv.config()

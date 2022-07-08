@@ -13,6 +13,7 @@ router.get('/verify',  middleware, async  (req,res) => {
         username: res.locals.user.username,
         firstName: res.locals.user.firstName,
         lastName: res.locals.user.lastName,
+        avatar : res.locals.user.avatar,
         age: res.locals.user.age
       }
     }

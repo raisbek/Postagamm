@@ -1,13 +1,17 @@
 import { Router } from "express";
 import { createUser, findUser } from "../service/user.service.js";
 import md5 from "md5";
+import multerUpload  from "../middlewares/multer-upload.js"
+
+
 const router = Router()
 
 
 
 
-router.post("/register", async (req,res) => {
-   const {username,password,firstName,lastName, age} = req.body
+router.post("/register", multerUpload.single('avatar') ,async (req,res) => {
+   const {username,password,firstName,lastName, age,} = req.body
+   const avatar = req.file.filename
    const exitUser = await findUser(username)
 
    if(exitUser){
@@ -16,7 +20,8 @@ router.post("/register", async (req,res) => {
     })
    }else {
     const token = md5(username+password) 
-    const newUser = await createUser(username,password,firstName,lastName, +age,token)
+    const newUser = await createUser(username,password,firstName,lastName, +age,avatar,token)
+    
     res.status(201).json({
         message: "User creted",
         user: {

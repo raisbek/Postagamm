@@ -1,7 +1,7 @@
 import {prisma} from "../config/database.js"
 
 
-export function createUser(username,password,firstName,lastName,age,token){
+export function createUser(username,password,firstName,lastName,age, avatar, token){
     return prisma.user.create(
     {data:
     {
@@ -9,6 +9,7 @@ export function createUser(username,password,firstName,lastName,age,token){
         password,
         firstName,
         lastName,
+        avatar,
         age,
         token
     }} 

@@ -3,7 +3,7 @@ import cors from "cors"
 import dotenv from  "dotenv"
 import authRoutes from "./routes/auth.routes.js"
 import verificationRoutes from './routes/verifacation.routes.js'
-
+import uploadRoutes  from "./routes/upload.routes.js"
 
 dotenv.config()
 
@@ -16,7 +16,7 @@ app.use(express.urlencoded({extended: true}))
 
 app.use(authRoutes)
 app.use(verificationRoutes)
-
+app.use(uploadRoutes)
 
 
 app.listen(process.env.PORT || 8080, () => {
